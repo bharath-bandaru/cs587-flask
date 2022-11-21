@@ -230,7 +230,7 @@ def github():
     dic = {}    
     for repo in repo_list:  
         split_list = repo.split("/")    
-        gh_obj = github3.login(token)    
+        gh_obj = github3.login(token=token)    
         repo = gh_obj.repository(split_list[0],split_list[1])   
         dic[split_list[1]] = repo.stargazers_count  
     stargazers_count = []   
@@ -241,7 +241,7 @@ def github():
     dic1 = {}   
     for repo in repo_list:  
         split_list = repo.split("/")    
-        gh_obj = github3.login(token)    
+        gh_obj = github3.login(token=token)    
         repo = gh_obj.repository(split_list[0],split_list[1])   
         dic1[split_list[1]] = repo.forks_count  
     forks_count = []    
