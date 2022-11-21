@@ -57,7 +57,7 @@ def github():
     repo_name = body['repository']
     # Add your own GitHub Token to run it local
     token = os.environ.get(
-        'GITHUB_TOKEN', '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')
+        'GITHUB_TOKEN', '')
     GITHUB_URL = f"https://api.github.com/"
     headers = {
         "Authorization": f'token {token}'
@@ -230,7 +230,7 @@ def github():
     dic = {}    
     for repo in repo_list:  
         split_list = repo.split("/")    
-        gh_obj = github3.login(token="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")    
+        gh_obj = github3.login(token)    
         repo = gh_obj.repository(split_list[0],split_list[1])   
         dic[split_list[1]] = repo.stargazers_count  
     stargazers_count = []   
@@ -241,7 +241,7 @@ def github():
     dic1 = {}   
     for repo in repo_list:  
         split_list = repo.split("/")    
-        gh_obj = github3.login(token="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")    
+        gh_obj = github3.login(token)    
         repo = gh_obj.repository(split_list[0],split_list[1])   
         dic1[split_list[1]] = repo.forks_count  
     forks_count = []    
